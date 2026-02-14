@@ -1,0 +1,22 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# PlatformIO / ESP-IDF builds
+.pio/
+.vscode/
+build/
+sdkconfig*
+CMakeCache.txt
+CMakeFiles/
+
+# macOS
+.DS_Store
+
+# Models / data (keep large files out by default)
+*.tflite
+*.bin
+*.csv
+data/

@@ -1,0 +1,37 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  columns=fullflexible
+}
+
+\title{Edge AI Smart Glasses\\Nicla Vision (Vision+IMU+ToF) + XIAO ESP32-C6 (Haptics+Comms)}
+\author{Ali Junaid}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Overview}
+This system uses Nicla Vision to run sensing and inference (camera + IMU + ToF) and transmits compact metadata packets to a secondary MCU (XIAO ESP32-C6) that drives haptics and communications.
+
+\section{Dataflow}
+Sensors $\rightarrow$ Vision output (class/conf/dir) $\rightarrow$ Fusion (urgency) $\rightarrow$ Packet TX $\rightarrow$ XIAO RX $\rightarrow$ Haptics.
+
+\section{Code Listings}
+\subsection{Nicla main sketch}
+\lstinputlisting[language=C++]{../nicla_vision/firmware/nicla_glasses_fusion/nicla_glasses_fusion.ino}
+
+\subsection{Fusion logic}
+\lstinputlisting[language=C++]{../nicla_vision/firmware/nicla_glasses_fusion/fusion_logic.cpp}
+
+\subsection{Packet definition}
+\lstinputlisting[language=C]{../nicla_vision/firmware/nicla_glasses_fusion/hazard_packet.h}
+
+\end{document}

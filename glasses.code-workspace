@@ -1,0 +1,14 @@
+{
+  "folders": [
+    { "path": "." },
+    { "path": "shared" },
+    { "path": "nicla_vision/firmware/nicla_glasses_fusion" },
+    { "path": "xiao_c6/firmware" }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.pio": true,
+      "**/__pycache__": true
+    }
+  }
+}
